@@ -6,11 +6,11 @@ GitHub
 Check out the live version here: androidmanishdev.vercel.app
 
 🛠️ Tech Stack
-Framework: Next.js
-Language: TypeScript
-Styling: Tailwind CSS
-Package Manager: pnpm
-Deployment: Vercel
+Framework: Next.js<br>
+Language: TypeScript<br>
+Styling: Tailwind CSS<br>
+Package Manager: pnpm<br>
+Deployment: Vercel<br>
 
 
 📌 Features
