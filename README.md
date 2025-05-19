@@ -3,7 +3,7 @@ Welcome to my personal portfolio website! This site showcases my skills, experie
 GitHub
 
 ### Live Website
-Check out the live version here: androidmanishdev.vercel.app
+Check out the live version here: [Visit My Portfolio](https://androidmanishdev.vercel.app)
 
 ### Tech Stack
 Framework: Next.js<br>
