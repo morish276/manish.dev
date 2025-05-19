@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 40% 15%;
+
+    --card: 220 20% 97%;
+    --card-foreground: 220 40% 15%;
+
+    --popover: 220 20% 97%;
+    --popover-foreground: 220 40% 15%;
+
+    --primary: 142 70% 45%;
+    --primary-foreground: 220 40% 15%;
+
+    --secondary: 220 15% 90%;
+    --secondary-foreground: 220 40% 15%;
+
+    --muted: 220 15% 90%;
+    --muted-foreground: 220 20% 40%;
+
+    --accent: 35 90% 70%;
+    --accent-foreground: 220 40% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 85%;
+    --input: 220 15% 85%;
+    --ring: 142 70% 45%;
+
+    --radius: 0.5rem;
+
+    /* Code theme colors */
+    --code-bg: 220 20% 97%;
+    --code-fg: 220 40% 15%;
+    --code-border: 220 15% 85%;
+    --code-comment: 220 20% 40%;
+    --code-string: 142 70% 45%;
+    --code-number: 35 90% 60%;
+    --code-keyword: 260 70% 60%;
+    --code-function: 210 90% 60%;
+    --code-variable: 35 90% 60%;
+    --code-operator: 0 70% 60%;
+    --code-class: 210 90% 60%;
+    --code-tag: 0 70% 60%;
+    --code-green: 142 70% 45%;
+    --code-blue: 210 90% 60%;
+    --code-purple: 260 70% 60%;
+    --code-red: 0 70% 60%;
+    --code-yellow: 35 90% 60%;
+    --code-orange: 25 90% 60%;
+  }
+
+  .dark {
+    --background: 220 30% 10%;
+    --foreground: 220 20% 90%;
+
+    --card: 220 30% 12%;
+    --card-foreground: 220 20% 90%;
+
+    --popover: 220 30% 10%;
+    --popover-foreground: 220 20% 90%;
+
+    --primary: 142 70% 45%;
+    --primary-foreground: 220 30% 10%;
+
+    --secondary: 220 30% 15%;
+    --secondary-foreground: 220 20% 90%;
+
+    --muted: 220 30% 15%;
+    --muted-foreground: 220 20% 70%;
+
+    --accent: 35 90% 70%;
+    --accent-foreground: 220 30% 10%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 85% 97%;
+
+    --border: 220 30% 20%;
+    --input: 220 30% 20%;
+    --ring: 142 70% 45%;
+
+    /* Code theme colors */
+    --code-bg: 220 30% 10%;
+    --code-fg: 220 20% 90%;
+    --code-border: 220 30% 20%;
+    --code-comment: 220 20% 40%;
+    --code-string: 142 70% 45%;
+    --code-number: 35 90% 70%;
+    --code-keyword: 260 70% 70%;
+    --code-function: 210 90% 70%;
+    --code-variable: 35 90% 70%;
+    --code-operator: 0 70% 70%;
+    --code-class: 210 90% 70%;
+    --code-tag: 0 70% 70%;
+    --code-green: 142 70% 45%;
+    --code-blue: 210 90% 70%;
+    --code-purple: 260 70% 70%;
+    --code-red: 0 70% 70%;
+    --code-yellow: 35 90% 70%;
+    --code-orange: 25 90% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-mono;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-mono;
+  }
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(var(--code-border) / 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--code-border) / 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.code-window {
+  @apply rounded-lg border border-code-border bg-code-bg overflow-hidden;
+}
+
+.code-window-header {
+  @apply flex items-center gap-2 px-4 py-2 border-b border-code-border;
+}
+
+.code-window-circle {
+  @apply w-3 h-3 rounded-full;
+}
+
+.code-window-content {
+  @apply p-4 font-mono text-sm;
+}
+
+.code-comment {
+  @apply text-code-comment;
+}
+
+.code-keyword {
+  @apply text-code-keyword;
+}
+
+.code-string {
+  @apply text-code-string;
+}
+
+.code-number {
+  @apply text-code-number;
+}
+
+.code-function {
+  @apply text-code-function;
+}
+
+.code-variable {
+  @apply text-code-variable;
+}
+
+.code-operator {
+  @apply text-code-operator;
+}
+
+.code-class {
+  @apply text-code-class;
+}
+
+.code-tag {
+  @apply text-code-tag;
+}
+
+.typing-cursor::after {
+  content: "|";
+  animation: cursor 1s infinite step-start;
+}
+
+@keyframes cursor {
+  50% {
+    opacity: 0;
+  }
+}
+
+.terminal-text {
+  overflow: hidden;
+  border-right: 0.15em solid hsl(var(--code-green));
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: hsl(var(--code-green));
+  }
+}
